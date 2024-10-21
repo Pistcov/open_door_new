@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.free {
+    background-image: url('пост 2.svg'); /* Замените на путь к вашему изображению "свободно" */
+    
+}
+
+.busy {
+    background-image: url('пост 1.svg'); /* Замените на путь к вашему изображению "занято" */
+    
+}
+
+button {
+    width: 500px; /* Установите ширину кнопки */
+    height: 100px; /* Установите высоту кнопки */
+    background-image: url('открыть.svg'); /* Замените на путь к вашему изображению активной кнопки */
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Добавляем абсолютное позиционирование */
+    top: 80%; /* Установите нужное значение для вертикального позиционирования */
+    left: 50%; /* Установите нужное значение для горизонтального позиционирования */
+    transform: translate(-50%, -50%); /* Центрируем кнопку относительно указанных координат */
+}
+
+button:disabled {
+    background-image: url('Group 143.png'); /* Замените на путь к вашему изображению неактивной кнопки */
+    cursor: not-allowed;
+
+}
