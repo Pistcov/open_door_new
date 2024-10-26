@@ -1,44 +1,112 @@
-body, html {
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400');
+
+
+
+* {
     margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+   padding: 0;
 }
 
-#background {
-    height: 100%;
-    width: 100%;
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.toplayer {
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-.free {
-    background-image: url('пост 2.svg'); /* Замените на путь к вашему изображению "свободно" */
-    
-}
-
-.busy {
-    background-image: url('пост 1.svg'); /* Замените на путь к вашему изображению "занято" */
-    
 }
 
 button {
-    width: 500px; /* Установите ширину кнопки */
-    height: 100px; /* Установите высоту кнопки */
-    background-image: url('открыть.svg'); /* Замените на путь к вашему изображению активной кнопки */
-    background-size: cover;
+    background: #56974e; /*  основной фон кнопки */
+    width: 300px;
+    height: 60px;
     border: none;
+    color: #FFF; /*  цвет надписи кнопки */
+    border-radius: 6px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15;
+    letter-spacing: 1px;
+    outline: none;
     cursor: pointer;
-    position: absolute; /* Добавляем абсолютное позиционирование */
-    top: 80%; /* Установите нужное значение для вертикального позиционирования */
-    left: 50%; /* Установите нужное значение для горизонтального позиционирования */
-    transform: translate(-50%, -50%); /* Центрируем кнопку относительно указанных координат */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 80%; /* П сверху */
+    left: 50%; /* Положение слева */
+    transform: translate(-50%, -50%); /* Центрирование кнопки */
 }
 
-button:disabled {
-    background-image: url('Group 143.png'); /* Замените на путь к вашему изображению неактивной кнопки */
-    cursor: not-allowed;
+button.hidden {
+    opacity: 0; /* Скрытие кнопки */
+}
 
+
+body {
+    font-family: 'Source Sans Pro',-serif;
+    background: url('пост cвободен.svg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* основной фон  */
+.layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #8b8d89;
+    opacity: 0;
+    transform: scale(0.1);
+    font-size: 27px;
+    transition: all 0.5s;
+}
+
+.layer > * {
+    margin: 3px;
+}
+
+
+/* кнопка крест  */
+i {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #c71c1c;
+    cursor: pointer;
+} 
+
+/* основная надпись */
+p {
+    color: #030303;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    opacity: 0;
+    transition: all 3s ease;
+}
+
+/* самая нижняя надпись  */
+a {
+    opacity: 0;
+    font-size: 13px;
+    color: #8f1717;
+    text-decoration: none;
+}
+
+.clicked {
+    transition: all 0.5s ease;
+    transform: scale(1);
+    z-index: 100;
+    opacity: 1;
+}
+
+.clicked p,
+.clicked a {
+    opacity: 1;
 }
